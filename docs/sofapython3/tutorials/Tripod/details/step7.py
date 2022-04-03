@@ -79,7 +79,7 @@ class SerialPortController(Sofa.Core.Controller):
             # Filling the list of the 3 angle values
             angles.append(angleByte)
         # The controller board of the real robot receives `angles` values
-        self.serialport.packetOut = angles
+        self.serialport.packetOut = [angles[0], angles[2], angles[1]]
 
 
 def createScene(rootNode):
